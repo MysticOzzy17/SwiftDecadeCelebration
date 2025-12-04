@@ -13,6 +13,10 @@
     Play,
     RefreshCw,
   } from "lucide-svelte";
+  import TimelineView from "./TimelineView.svelte";
+  import BugSquashGame from "./BugSquashGame.svelte";
+  import Footer from "./Footer.svelte";
+  import NavBar from "./NavBar.svelte";
 
   const EVENTS = [
     {
@@ -77,4 +81,24 @@
     "let decade = 10",
     "await celebrate(anniversary: decade)",
   ];
+
+  let activeTab = "timeline";
 </script>
+
+<div
+  class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-orange-500/30"
+>
+  <NavBar {activeTab} on:changeTab={(e) => (activeTab = e.detail)} />
+
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    {#if activeTab === "timeline"}
+      <TimelineView />
+    {/if}
+
+    {#if activeTab === "game"}
+      <BugSquashGame />
+    {/if}
+  </main>
+
+  <Footer />
+</div>
