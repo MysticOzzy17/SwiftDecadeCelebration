@@ -70,4 +70,11 @@
       iconClass: "w-6 h-6 text-green-500",
     },
   ];
+
+  const CODE_SNIPPETS = [
+    "import Swift",
+    "print('Hello, Open Source!')",
+    "let decade = 10",
+    "await celebrate(anniversary: decade)",
+  ];
 </script>
